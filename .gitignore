@@ -11,8 +11,8 @@
 aether-cmd-server/*
 copykey
 copybundle
-.idea/
-*/.idea/
+.idea/*
+*/*.idea
 */target/
 *.log
 */log/*
