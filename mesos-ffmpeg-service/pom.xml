@@ -16,4 +16,9 @@
 			<version>4.12</version>
 		</dependency>
 	</dependencies>
+	<parent>
+		<groupId>com.github.andlaz</groupId>
+		<artifactId>mesos-ffmpeg-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
 </project>
