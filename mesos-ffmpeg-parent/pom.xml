@@ -4,4 +4,7 @@
   <artifactId>mesos-ffmpeg-parent</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
+  <modules>
+  	<module>../mesos-ffmpeg-service</module>
+  </modules>
 </project>
