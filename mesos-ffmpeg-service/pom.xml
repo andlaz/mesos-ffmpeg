@@ -4,6 +4,13 @@
 	<groupId>com.github.andlaz</groupId>
 	<artifactId>mesos-ffmpeg</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<slf4j.version>1.6.1</slf4j.version>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>io.netty</groupId>
@@ -15,8 +22,42 @@
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 		</dependency>
+
+		<!-- Scala dependency -->
+		<dependency>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-library</artifactId>
+			<version>2.10.4</version>
+		</dependency>
+		<!--Mesos dependency-->
+		<dependency>
+			<groupId>org.apache.mesos</groupId>
+			<artifactId>mesos</artifactId>
+			<version>0.22.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.protobuf</groupId>
+			<artifactId>protobuf-java</artifactId>
+			<version>2.5.0</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
-	<parent>
+		<parent>
 		<groupId>com.github.andlaz</groupId>
 		<artifactId>mesos-ffmpeg-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
