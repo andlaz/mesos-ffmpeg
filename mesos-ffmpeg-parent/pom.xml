@@ -4,6 +4,12 @@
   <artifactId>mesos-ffmpeg-parent</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.3.0.RELEASE</version>la
+  </parent>
+
   <modules>
   	<module>../mesos-ffmpeg-service</module>
   </modules>
