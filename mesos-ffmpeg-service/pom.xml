@@ -61,5 +61,6 @@
 		<groupId>com.github.andlaz</groupId>
 		<artifactId>mesos-ffmpeg-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../mesos-ffmpeg-parent/</relativePath>
 	</parent>
 </project>
