@@ -19,6 +19,11 @@ import org.apache.mesos.Protos.FrameworkInfo;
 import org.apache.mesos.Protos.Status;
 import org.apache.mesos.Scheduler;
 
+/**
+ * Bootstraps the Netty http pipeline
+ * @author andras
+ *
+ */
 public class MesosFfmpegService {
 
 	public static class Builder {
@@ -45,18 +50,17 @@ public class MesosFfmpegService {
 		MesosFfmpegService service = new MesosFfmpegService.Builder().build();
 
 		ServerBootstrap bootstrap = new ServerBootstrap();
-		bootstrap.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class)
-				.childHandler(new ChannelInitializer<SocketChannel>() {
-					@Override
-					public void initChannel(SocketChannel ch) throws Exception {
-						service.pipelineForChannel(ch);
-					}
-				}).childOption(ChannelOption.SO_KEEPALIVE, true);
+		bootstrap
+			.group(bossGroup, workerGroup)
+			.channel(NioServerSocketChannel.class)
+			.childHandler(new ChannelInitializer<SocketChannel>() {
+				@Override
+				public void initChannel(SocketChannel ch) throws Exception {
+					service.pipelineForChannel(ch);
+				}
+			}).childOption(ChannelOption.SO_KEEPALIVE, true);
 
 		bootstrap.bind(service.getPort()).sync().channel().closeFuture().sync();
-
-
-
 
 	}
 
@@ -97,8 +101,11 @@ public class MesosFfmpegService {
 
 	public ChannelPipeline pipelineForChannel(SocketChannel channel) {
 
-		return channel.pipeline().addLast(new HttpServerCodec()).addLast(new HttpObjectAggregator(65536))
-				.addLast(new ChunkedWriteHandler()).addLast(new MesosFfmpegServiceHandler());
+		return channel.pipeline()
+				.addLast(new HttpServerCodec())
+				.addLast(new HttpObjectAggregator(65536))
+				.addLast(new ChunkedWriteHandler())
+				.addLast(new MesosFfmpegServiceHandler());
 
 	}
 
