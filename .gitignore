@@ -1,3 +1,4 @@
+.DS_Store
 .git
 .class
 .jar
@@ -17,8 +18,4 @@ copybundle
 *.log
 */log/*
 */*.iml
-
-
 *.class
-
-mesos-ffmpeg-docker/.DS_Store
